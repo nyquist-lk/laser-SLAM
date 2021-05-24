@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="line_bag_file" default="/robot_data/calibration/line.bag"/>
+  <arg name="circle_bag_file" default="/robot_data/calibration/circle.bag"/>
+
+  <!-- R2000 Driver -->
+  <node pkg="calibrate_node" type="calibrate_node" name="calibrate_node" respawn="false" output="screen">
+    <param name="line_bag_file" value="$(arg line_bag_file)"/>
+    <param name="circle_bag_file" value="$(arg circle_bag_file)"/>
+  </node>
+
+</launch>
